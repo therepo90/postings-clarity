@@ -12,6 +12,6 @@
       <input clrInput type="text" [formControlName]="control.field"/>
       <clr-control-error>Invalid field</clr-control-error>
     </clr-input-container>
-    <button class="btn submit-btn" (click)="onSubmit()" type="submit">Add</button>
+    <button class="btn submit-btn" (click)="onSubmit()" type="submit" [disabled]="!form.valid">Add</button>
   </form>
 </div>
