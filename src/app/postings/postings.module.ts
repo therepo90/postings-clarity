@@ -5,12 +5,14 @@ import {StorageService} from '../storage/services/storage.service';
 import {PostingsMockProviderService} from './services/postings-mock-provider.service';
 import {PostingsProviderService} from './services/postings-provider.service';
 import {PostingsService} from './services/postings.service';
+import { PostingComponent } from './posting/posting.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: []
+  declarations: [PostingComponent],
+  exports: [PostingComponent],
 })
 export class PostingsModule {
   static forRoot(): ModuleWithProviders {
