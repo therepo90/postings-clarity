@@ -1,8 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {PostingsPageComponent} from './postings-page/postings-page.component';
 
 const routes: Routes = [
-  { path: '**', redirectTo: '/', pathMatch: 'full' },
+  { path: 'postings', component: PostingsPageComponent, pathMatch: 'full' },
+  { path: '**', redirectTo: '/postings', pathMatch: 'full' },
 ];
 
 @NgModule({
