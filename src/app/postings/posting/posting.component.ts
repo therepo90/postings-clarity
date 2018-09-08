@@ -1,21 +1,20 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Posting} from '../models/posting';
+import { Component, Input, OnInit } from '@angular/core';
+import { Posting } from '../models/posting';
 
 @Component({
-  selector: 'app-posting',
-  templateUrl: './posting.component.html',
-  styleUrls: ['./posting.component.scss']
+    selector: 'app-posting',
+    templateUrl: './posting.component.html',
+    styleUrls: ['./posting.component.scss']
 })
 export class PostingComponent implements OnInit {
-  @Input() public posting: Posting;
+    @Input()
+    public posting: Posting;
 
-  constructor() {
-  }
+    constructor() {}
 
-  ngOnInit() {
-  }
+    ngOnInit() {}
 
-  getSalaryRange(salaryMin: number, salaryMax: number): string {
-    return `${salaryMin}$ - ${salaryMax}$`;
-  }
+    getSalaryRange(salaryMin: number, salaryMax: number): string {
+        return `${salaryMin}$ - ${salaryMax}$`;
+    }
 }

@@ -97,16 +97,17 @@ export class AddPostingPageComponent implements OnInit {
     }
 
     getError(control: Control): string {
-      const ctrlError = first(Object.keys(control.ctrl.errors || {}));
-      const formError = this.form.errors && this.form.errors[control.field];
-      return ctrlError || formError;
+        const ctrlError = first(Object.keys(control.ctrl.errors || {}));
+        const formError = this.form.errors && this.form.errors[control.field];
+        return ctrlError || formError;
     }
 
     hasError(control: Control): boolean {
         const ctrlError =
             control.ctrl.invalid &&
             (control.ctrl.dirty || control.ctrl.touched);
-        const formError = this.form.errors && Boolean(this.form.errors[control.field]);
+        const formError =
+            this.form.errors && Boolean(this.form.errors[control.field]);
         return ctrlError || formError;
     }
 }
