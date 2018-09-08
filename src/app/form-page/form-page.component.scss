@@ -1,0 +1,10 @@
+@import "../../styles/mixins";
+
+:host {
+  display: block;
+}
+
+.headline {
+  @include headline();
+}
+
