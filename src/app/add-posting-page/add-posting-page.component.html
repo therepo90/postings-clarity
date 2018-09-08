@@ -10,8 +10,13 @@
     <clr-input-container *ngFor="let control of controls">
       <label>{{control.label}}</label>
       <input clrInput type="text" [formControlName]="control.field"/>
-      <clr-control-error>Invalid field</clr-control-error>
+      <clr-control-error *clrIfError="'salary'">Max salary should be at most twice as big as salary min</clr-control-error>
+      <clr-control-error *clrIfError="'required'">Field is required</clr-control-error>
+
     </clr-input-container>
+    <pre>
+      {{form.errors | json}}
+    </pre>
     <button class="btn submit-btn" (click)="onSubmit()" type="submit" [disabled]="!form.valid">Add</button>
   </form>
 </div>
