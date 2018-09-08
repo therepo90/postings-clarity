@@ -1,4 +1,8 @@
-<h1 class="headline">Postings:</h1>
-<app-posting *ngFor="let posting of postings$ | async" [posting]="posting"></app-posting>
-<button class="btn" (click)="onAddNewPosting()">Add new posting</button>
+<h2 class="headline">Postings:</h2>
+<app-posting *ngFor="let posting of postings$ | async"
+             [posting]="posting"
+             class="posting"
+>
+</app-posting>
+<button class="btn add-btn" (click)="onAddNewPosting()">Add new posting</button>
 

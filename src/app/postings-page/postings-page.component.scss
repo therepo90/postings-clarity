@@ -3,9 +3,14 @@
 }
 
 .headline {
-  font-size: 1rem;
+  margin: 0.5rem 0;
 }
 
-.add-posting-btn {
+.posting {
+  margin-bottom: 0.5rem;
+}
 
+.add-btn {
+  display: flex;
+  margin-left: auto;
 }

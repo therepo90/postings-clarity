@@ -1,15 +1,17 @@
+import {CommonModule} from '@angular/common';
 import {ModuleWithProviders, NgModule} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {LocalStorageService} from '../storage/services/local-storage.service';
-import {StorageService} from '../storage/services/storage.service';
+import {ClarityModule} from '@clr/angular';
+import {StorageModule} from '../storage/storage.module';
+import {PostingComponent} from './posting/posting.component';
 import {PostingsMockProviderService} from './services/postings-mock-provider.service';
 import {PostingsProviderService} from './services/postings-provider.service';
 import {PostingsService} from './services/postings.service';
-import { PostingComponent } from './posting/posting.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    StorageModule,
+    ClarityModule,
   ],
   declarations: [PostingComponent],
   exports: [PostingComponent],

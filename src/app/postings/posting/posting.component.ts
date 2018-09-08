@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Posting} from '../models/posting';
 
 @Component({
@@ -15,4 +15,7 @@ export class PostingComponent implements OnInit {
   ngOnInit() {
   }
 
+  getSalaryRange(salaryMin: number, salaryMax: number): string {
+    return `${salaryMin}$ - ${salaryMax}$`;
+  }
 }
