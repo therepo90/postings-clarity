@@ -19,7 +19,7 @@ export class CustomValidators {
             ? null
             : {
                   [salaryMinField]: 'Salary range is too high',
-                  [salaryMaxField]: 'Salary range is too high',
+                  [salaryMaxField]: 'Salary range is too high'
               };
     };
 }
