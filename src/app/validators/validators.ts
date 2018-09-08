@@ -18,7 +18,8 @@ export class CustomValidators {
         return maxSalary <= minSalary * 2
             ? null
             : {
-                  salary: 'Range is too high',
+                  [salaryMinField]: 'Salary range is too high',
+                  [salaryMaxField]: 'Salary range is too high',
               };
     };
 }

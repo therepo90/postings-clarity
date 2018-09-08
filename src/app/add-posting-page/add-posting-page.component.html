@@ -6,17 +6,17 @@
   <div class="card-header">
     Fill in the form:
   </div>
-  <form clrForm [formGroup]="form" class="card-block form">
-    <clr-input-container *ngFor="let control of controls">
-      <label>{{control.label}}</label>
-      <input clrInput type="text" [formControlName]="control.field"/>
-      <clr-control-error *clrIfError="'salary'">Max salary should be at most twice as big as salary min</clr-control-error>
-      <clr-control-error *clrIfError="'required'">Field is required</clr-control-error>
-
-    </clr-input-container>
-    <pre>
-      {{form.errors | json}}
-    </pre>
+  <form clrForm [formGroup]="form" class="card-block clr-form form">
+    <div  class="clr-form-control" *ngFor="let control of controls">
+      <label class="clr-control-label">{{control.label}}</label>
+      <div class="clr-control-container" [class.clr-error]="hasError(control)">
+        <div class="clr-input-wrapper">
+          <input type="text" class="clr-input" [formControlName]="control.field">
+          <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+        </div>
+        <span class="clr-subtext" *ngIf="hasError(control)">{{getError(control)}}</span>
+      </div>
+    </div>
     <button class="btn submit-btn" (click)="onSubmit()" type="submit" [disabled]="!form.valid">Add</button>
   </form>
 </div>
