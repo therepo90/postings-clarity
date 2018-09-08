@@ -7,6 +7,8 @@ import {FormPageModule} from './form-page/form-page.module';
 import {PostingsPageModule} from './postings-page/postings-page.module';
 import {PostingsModule} from './postings/postings.module';
 import {StorageModule} from './storage/storage.module';
+import { ClarityModule } from '@clr/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import {StorageModule} from './storage/storage.module';
     PostingsPageModule,
     FormPageModule,
     AppRoutingModule,
+    ClarityModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

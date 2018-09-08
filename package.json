@@ -25,7 +25,11 @@
     "lodash": "^4.17.10",
     "normalize.css": "^8.0.0",
     "rxjs": "^6.0.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "@clr/angular": "^0.13.0",
+    "@clr/ui": "^0.13.0",
+    "@clr/icons": "^0.13.0",
+    "@webcomponents/custom-elements": "^1.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",
