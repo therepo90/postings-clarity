@@ -1,2 +1,17 @@
-<button class="btn btn-sm btn-icon" (click)="onBack()"><clr-icon shape="caret" dir="left"></clr-icon>Back</button>
-<h2 class="headline">Add new posting</h2>
+<h2 class="headline"><div>Add new posting</div><button class="btn btn-sm btn-icon" (click)="onBack()">
+  <clr-icon shape="caret" dir="left"></clr-icon>
+  Back
+</button></h2>
+<div class="card form-container">
+  <div class="card-header">
+    Fill in the form:
+  </div>
+  <form clrForm [formGroup]="form" class="card-block form">
+    <clr-input-container *ngFor="let control of controls">
+      <label>{{control.label}}</label>
+      <input clrInput type="text" [formControlName]="control.field"/>
+      <clr-control-error>Invalid field</clr-control-error>
+    </clr-input-container>
+    <button class="btn submit-btn" (click)="onSubmit()" type="submit">Add</button>
+  </form>
+</div>
