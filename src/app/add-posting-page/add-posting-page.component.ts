@@ -1,18 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {PostingsService} from '../postings/services/postings.service';
 
 @Component({
-  selector: 'app-form-page',
-  templateUrl: './form-page.component.html',
-  styleUrls: ['./form-page.component.scss']
+  selector: 'app-add-posting-page',
+  templateUrl: './add-posting-page.component.html',
+  styleUrls: ['./add-posting-page.component.scss']
 })
-export class FormPageComponent implements OnInit {
+export class AddPostingPageComponent implements OnInit {
 
   form: FormGroup;
   controls: Array<any>;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private postingService: PostingsService) { }
 
   ngOnInit() {
     this.controls = [
@@ -39,6 +40,7 @@ export class FormPageComponent implements OnInit {
   }
 
   onSubmit() {
-
+    const posting = {};
+    // this.postingService.addPosting()
   }
 }

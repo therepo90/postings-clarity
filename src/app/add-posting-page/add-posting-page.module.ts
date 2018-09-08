@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {ClarityModule, ClrFormsNextModule} from '@clr/angular';
-import {FormPageComponent} from './form-page.component';
+import {PostingsModule} from '../postings/postings.module';
+import {AddPostingPageComponent} from './add-posting-page.component';
 
 @NgModule({
   imports: [
@@ -12,8 +13,9 @@ import {FormPageComponent} from './form-page.component';
     ClrFormsNextModule,
     ReactiveFormsModule,
     RouterModule,
+    PostingsModule,
   ],
-  declarations: [FormPageComponent],
-  exports: [FormPageComponent],
+  declarations: [AddPostingPageComponent],
+  exports: [AddPostingPageComponent],
 })
-export class FormPageModule { }
+export class AddPostingPageModule { }

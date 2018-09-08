@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
-import {FormPageModule} from './form-page/form-page.module';
+import {AddPostingPageModule} from './add-posting-page/add-posting-page.module';
 import {PostingsPageModule} from './postings-page/postings-page.module';
 import {PostingsModule} from './postings/postings.module';
 import {StorageModule} from './storage/storage.module';
@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     StorageModule.forRoot(),
     PostingsModule.forRoot(),
     PostingsPageModule,
-    FormPageModule,
+    AddPostingPageModule,
     AppRoutingModule,
     ClarityModule,
     BrowserAnimationsModule,
