@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { first } from 'lodash';
+import { first, isEmpty } from 'lodash';
 import {
     AbstractControl,
     FormControl,
@@ -97,17 +97,17 @@ export class AddPostingPageComponent implements OnInit {
     }
 
     getError(control: Control): string {
-        const ctrlError = first(Object.keys(control.ctrl.errors || {}));
+        const ctrlError = isEmpty(control.ctrl.errors) ? null : 'Invalid field';
         const formError = this.form.errors && this.form.errors[control.field];
         return ctrlError || formError;
     }
 
     hasError(control: Control): boolean {
-        const ctrlError =
+        const hasCtrlError =
             control.ctrl.invalid &&
             (control.ctrl.dirty || control.ctrl.touched);
-        const formError =
+        const hasFormError =
             this.form.errors && Boolean(this.form.errors[control.field]);
-        return ctrlError || formError;
+        return hasCtrlError || hasFormError;
     }
 }

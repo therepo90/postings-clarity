@@ -11,7 +11,7 @@
       <label class="clr-control-label">{{control.label}}</label>
       <div class="clr-control-container" [class.clr-error]="hasError(control)">
         <div class="clr-input-wrapper">
-          <input type="text" class="clr-input" [formControlName]="control.field">
+          <input [type]="control.number ? 'number' : 'text'" class="clr-input" [formControlName]="control.field">
           <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
         </div>
         <span class="clr-subtext" *ngIf="hasError(control)">{{getError(control)}}</span>
