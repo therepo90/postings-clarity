@@ -26,6 +26,7 @@ interface Control {
 export class AddPostingPageComponent implements OnInit {
     form: FormGroup;
     controls: Array<Control>;
+    formPending = false;
 
     constructor(
         private router: Router,
@@ -46,13 +47,13 @@ export class AddPostingPageComponent implements OnInit {
             },
             {
                 field: 'salaryMin',
-                ctrl: new FormControl('', [Validators.required]),
+                ctrl: new FormControl(0, [Validators.required]),
                 label: 'Salary min',
                 number: true
             },
             {
                 field: 'salaryMax',
-                ctrl: new FormControl('', Validators.required),
+                ctrl: new FormControl(0, Validators.required),
                 label: 'Salary max',
                 number: true
             },
@@ -93,7 +94,11 @@ export class AddPostingPageComponent implements OnInit {
     }
 
     onSubmit() {
-        this.postingService.addPosting(this.form.getRawValue());
+        this.formPending = true;
+        this.postingService
+            .addPosting(this.form.getRawValue())
+            .then((res) => this.router.navigateByUrl('/postings'))
+            .finally(() => (this.formPending = false));
     }
 
     getError(control: Control): string {

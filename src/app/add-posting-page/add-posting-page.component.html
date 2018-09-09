@@ -17,6 +17,6 @@
         <span class="clr-subtext" *ngIf="hasError(control)">{{getError(control)}}</span>
       </div>
     </div>
-    <button class="btn submit-btn" (click)="onSubmit()" type="submit" [disabled]="!form.valid">Add</button>
+    <button class="btn submit-btn" (click)="onSubmit()" type="submit" [disabled]="!form.valid || formPending">Add</button>
   </form>
 </div>

@@ -1,10 +1,5 @@
-export interface Posting {
+import { PostingNew } from './posting-new';
+
+export interface Posting extends PostingNew {
     id: string;
-    title: string;
-    company: string;
-    salaryMin: number;
-    salaryMax: number;
-    city: string;
-    street: string;
-    postalCode: string;
 }
