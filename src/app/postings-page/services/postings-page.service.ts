@@ -7,10 +7,6 @@ import { PostingsService } from '../../postings/services/postings.service';
 export class PostingsPageService {
     constructor(private service: PostingsService) {}
 
-    addPosting(posting: Posting): Promise<any> {
-        return this.service.addPosting(posting);
-    }
-
     getPostings(): Observable<Posting[]> {
         return this.service.getPostings();
     }

@@ -46,28 +46,13 @@ export class PostingsMockProviderService extends PostingsProviderService {
         this.updatePostings();
     }
 
-    private updatePostings() {
-        const storagePostings: DBPostings = this.storage.get(this.POSTINGS_KEY);
-        this.postingsSubject$.next(
-            Object.entries(storagePostings).map(([key, value]) => value)
-        );
-    }
-
-    private addMock(posting: Posting) {
-        const storagePostings: DBPostings = this.storage.get(this.POSTINGS_KEY);
-        this.storage.save(this.POSTINGS_KEY, {
-            ...storagePostings,
-            [posting.id]: { ...posting }
-        });
-    }
-
     async addPosting(postingNew: PostingNew) {
         const id = new Date().getTime().toString();
         const posting = {
             ...postingNew,
             id
         };
-        const storagePostings: DBPostings = this.storage.get(this.POSTINGS_KEY);
+        const storagePostings = this.getPostingsFromStorage();
         this.storage.save(this.POSTINGS_KEY, {
             ...storagePostings,
             [posting.id]: { ...posting }
@@ -77,5 +62,24 @@ export class PostingsMockProviderService extends PostingsProviderService {
 
     getPostings(): Observable<Posting[]> {
         return this.postings$;
+    }
+
+    private updatePostings() {
+        const storagePostings = this.getPostingsFromStorage();
+        this.postingsSubject$.next(
+            Object.entries(storagePostings).map(([key, value]) => value)
+        );
+    }
+
+    private getPostingsFromStorage(): DBPostings {
+        return this.storage.get(this.POSTINGS_KEY) as DBPostings;
+    }
+
+    private addMock(posting: Posting) {
+        const storagePostings = this.getPostingsFromStorage();
+        this.storage.save(this.POSTINGS_KEY, {
+            ...storagePostings,
+            [posting.id]: { ...posting }
+        });
     }
 }

@@ -47,13 +47,13 @@ export class AddPostingPageComponent implements OnInit {
             },
             {
                 field: 'salaryMin',
-                ctrl: new FormControl(0, [Validators.required]),
+                ctrl: new FormControl('', [Validators.required]),
                 label: 'Salary min',
                 number: true
             },
             {
                 field: 'salaryMax',
-                ctrl: new FormControl(0, Validators.required),
+                ctrl: new FormControl('', Validators.required),
                 label: 'Salary max',
                 number: true
             },

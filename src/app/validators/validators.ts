@@ -15,6 +15,7 @@ export class CustomValidators {
     ): ValidatorFn => (formGroup: FormGroup): ValidationErrors | null => {
         const minSalary = formGroup.controls[salaryMinField].value;
         const maxSalary = formGroup.controls[salaryMaxField].value;
+        // @TODO could be validated also when <= 0
         return maxSalary <= minSalary * 2
             ? null
             : {

@@ -1,5 +1,7 @@
 # postings-clarity
 
+Sample app using Clarity UI framework
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
 
 ## Installation
